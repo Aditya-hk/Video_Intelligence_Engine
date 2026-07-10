@@ -8,20 +8,12 @@ from src.vectorstore import add_to_vectorstore, retrieve_from_vectorstore
 import streamlit as st
 
 api_key = st.secrets["MISTRAL_API_KEY"]
-# ----------------------------
-# Page Config
-# ----------------------------
+
 st.set_page_config(
     page_title="Video Intelligence Engine",
     layout="wide"
 )
 
-# ----------------------------
-# Custom CSS Styling (added only — no existing code touched)
-# ----------------------------
-# ----------------------------
-# Custom CSS Styling (added only — no existing code touched)
-# ----------------------------
 st.markdown("""
 <style>
     /* Overall app background */
@@ -163,26 +155,19 @@ st.markdown("""
 st.title("🎥 Video Intelligence Engine")
 st.write("Upload a video to begin processing.")
 
-# ----------------------------
-# Video Directory
-# ----------------------------
+
 VIDEO_DIR = Path("data/videos")
 VIDEO_DIR.mkdir(parents=True, exist_ok=True)
 
-# ----------------------------
-# Upload Video
-# ----------------------------
 uploaded_file = st.file_uploader(
     "Choose a video",
     type=["mp4", "mov", "avi", "mkv"]
 )
 
-# ----------------------------
-# Process Video
-# ----------------------------
+
 if uploaded_file is not None:
 
-    # Save video
+    
     save_path = VIDEO_DIR / uploaded_file.name
 
     with open(save_path, "wb") as f:
@@ -190,7 +175,6 @@ if uploaded_file is not None:
 
     st.success("✅ Video uploaded successfully!")
 
-    # Display video
     st.video(str(save_path))
 
     # Extract audio
@@ -208,9 +192,7 @@ if uploaded_file is not None:
     with st.spinner("Creating chunks..."):
       chunks = chunk_transcript(transcript)
 
-    # ----------------------------
-    # Display Transcript
-    # ----------------------------
+
     st.subheader("📄 Transcript")
 
     for segment in transcript:
@@ -219,9 +201,7 @@ if uploaded_file is not None:
         )
     st.info("📦 Chunking transcript...")
 
-    # ----------------------------
-    # Display Chunks
-    # ----------------------------
+ 
     st.subheader("📦 Chunks")
     
     for i, chunk in enumerate(chunks, start=1):
@@ -230,16 +210,12 @@ if uploaded_file is not None:
         st.write(chunk["text"])
         st.divider()
     st.success("✅ Chunking complete!")
-    # ----------------------------
-    # Store in Vector DB
-    # ----------------------------
+  
     if st.button("Store Chunks in ChromaDB"):
         add_to_vectorstore(chunks)
         st.success("✅ Chunks stored successfully!")
 
-    # ----------------------------
-    # Query Section
-    # ----------------------------
+
     st.subheader("💬 Ask Questions")
 
     query = st.text_input("Ask a question about the uploaded video")

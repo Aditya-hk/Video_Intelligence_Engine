@@ -5,7 +5,9 @@ from src.audio import extract_audio
 from src.transcriber import transcribe
 from src.chunker import chunk_transcript
 from src.vectorstore import add_to_vectorstore, retrieve_from_vectorstore
+import streamlit as st
 
+api_key = st.secrets["MISTRAL_API_KEY"]
 # ----------------------------
 # Page Config
 # ----------------------------

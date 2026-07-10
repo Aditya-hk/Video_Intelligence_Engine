@@ -1,15 +1,16 @@
 import streamlit as st
 
-api_key = st.secrets["MISTRAL_API_KEY"]
+
 from langchain_mistralai import ChatMistralAI
 
-from dotenv import load_dotenv
+
 import os
-load_dotenv()
+
 from langchain_core.prompts import ChatPromptTemplate
 
 llm=ChatMistralAI(
     model_name="mistral-medium-latest",
+    api_key = st.secrets["MISTRAL_API_KEY"],
     temperature=0.5,)
 
 prompt = ChatPromptTemplate.from_template(

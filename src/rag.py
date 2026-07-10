@@ -1,4 +1,8 @@
+import streamlit as st
+
+api_key = st.secrets["MISTRAL_API_KEY"]
 from langchain_mistralai import ChatMistralAI
+
 from dotenv import load_dotenv
 import os
 load_dotenv()

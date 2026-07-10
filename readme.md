@@ -365,14 +365,14 @@ This project is licensed under the MIT License.
 
 # 👨‍💻 Author
 
-**Aditya Kumar**
+**Aditya Upadhyaya**
 
 B.Tech Information Technology  
 Indian Institute of Information Technology Bhopal
 
 GitHub: https://github.com/Aditya-hk
 
-LinkedIn: https://www.linkedin.com/in/aditya-hk/
+LinkedIn: https://www.linkedin.com/in/adityaup11/
 
 ---
 

@@ -1,0 +1,32 @@
+# Virtual Environment
+.venv/
+venv/
+
+# Environment Variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Streamlit
+.streamlit/
+
+# Generated Data
+data/videos/*
+!data/videos/.gitkeep
+
+data/audio/*
+!data/audio/.gitkeep
+
+data/vectorstore/*
+!data/vectorstore/.gitkeep
+
+# Logs
+*.log

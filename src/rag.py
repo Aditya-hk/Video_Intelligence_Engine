@@ -9,7 +9,7 @@ import os
 from langchain_core.prompts import ChatPromptTemplate
 
 llm=ChatMistralAI(
-    model_name="mistral-medium-latest",
+    model="mistral-medium-latest",
     api_key = st.secrets["MISTRAL_API_KEY"],
     temperature=0.5,)
 

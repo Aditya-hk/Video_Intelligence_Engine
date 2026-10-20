@@ -48,20 +48,17 @@ def generate(context, question):
             "context": context,
             "question": question,
         })
-
         return response.content
 
     except Exception as e:
-        print(f"Groq generation error: {type(e).__name__}: {e}")
+        import traceback
 
-        # Display useful error information without exposing secrets
-        if isinstance(e, httpx.HTTPStatusError):
-            st.error(f"Groq API returned HTTP {e.response.status_code}.")
-            st.code(e.response.text[:1500], language="text")
-        else:
-            st.error(
-                "Unable to generate an answer using Groq. "
-                "Check the application logs for details."
-            )
+        print("=== GROQ GENERATION ERROR ===")
+        print("Error type:", type(e).__name__)
+        print("Error message:", str(e))
+        traceback.print_exc()
+
+        st.error(f"Groq error: {type(e).__name__}")
+        st.code(str(e)[:2000], language="text")
 
         return None

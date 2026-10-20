@@ -187,7 +187,7 @@ sudo apt install ffmpeg
 Create a `.env` file.
 
 ```env
-MISTRAL_API_KEY=your_api_key_here
+GROQ_API_KEY=your_api_key_here
 ```
 
 ---
@@ -338,7 +338,7 @@ ChromaDB
 Retriever
    │
    ▼
-Mistral AI
+Groq AI
    │
    ▼
 Answer
@@ -369,7 +369,7 @@ This project is licensed under the MIT License.
 
 **Aditya Upadhyaya**
 
-B.Tech Information Technology  
+B.Tech Computer Science Engineering CSE(CS)
 Indian Institute of Information Technology Bhopal
 
 GitHub: https://github.com/Aditya-hk

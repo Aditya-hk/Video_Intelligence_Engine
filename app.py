@@ -7,7 +7,7 @@ from src.chunker import chunk_transcript
 from src.vectorstore import add_to_vectorstore, retrieve_from_vectorstore
 import streamlit as st
 
-api_key = st.secrets["MISTRAL_API_KEY"]
+api_key = st.secrets["GROQ_API_KEY"]
 
 st.set_page_config(
     page_title="Video Intelligence Engine",

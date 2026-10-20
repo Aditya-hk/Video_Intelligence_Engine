@@ -9,7 +9,7 @@ from langchain_core.prompts import ChatPromptTemplate
 @st.cache_resource
 def get_llm():
     return ChatGroq(
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-120b",
         api_key=st.secrets["GROQ_API_KEY"],
         temperature=0.5,
         max_retries=2,

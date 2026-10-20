@@ -47,9 +47,9 @@ def generate(context, question):
         status_code = e.response.status_code
         error_body = e.response.text[:1500]
 
-        # Record the details in Streamlit Cloud logs
-        print(f"Mistral HTTP status: {status_code}")
-        print(f"Mistral API error: {error_body}")
+      
+        st.error(f"Mistral HTTP status: {status_code}")
+        st.code(error_body, language="text")
 
         # Show a safe message to the user
         if status_code == 401:

@@ -8,14 +8,10 @@ langchain-huggingface
 langchain-chroma
 
 chromadb
-
 sentence-transformers
 
 faster-whisper
-
-torch
-torchaudio
+av==14.0.1
 
 python-dotenv
-av==14.0.1
 numpy

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Video Intelligence Engine</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: #f5f7ff;
+            line-height: 1.7;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            border-bottom: 1px solid #26304b;
+        }
+
+        nav h2 {
+            color: #8b9cff;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 70px 20px;
+            background:
+                radial-gradient(ellipse at top, #263574 0%, #0b1020 65%);
+        }
+
+        .badge {
+            border: 1px solid #5667c7;
+            color: #b8c3ff;
+            padding: 7px 16px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 7vw, 68px);
+            line-height: 1.15;
+            max-width: 900px;
+            margin-bottom: 24px;
+        }
+
+        h1 span {
+            color: #8b9cff;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: #b9c3d9;
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 13px 24px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #7588ff;
+            color: #080d20;
+        }
+
+        .secondary {
+            border: 1px solid #526080;
+            color: white;
+        }
+
+        section {
+            padding: 65px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #aeb9d0;
+            max-width: 700px;
+            margin: 0 auto 35px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #131b30;
+            border: 1px solid #293652;
+            border-radius: 14px;
+            padding: 25px;
+        }
+
+        .card h3 {
+            color: #aab7ff;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #b5bfd2;
+        }
+
+        .workflow {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .workflow li {
+            margin: 15px 0;
+            padding: 15px 20px;
+            list-style-position: inside;
+            background: #131b30;
+            border: 1px solid #293652;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #9daac3;
+            border-top: 1px solid #26304b;
+        }
+
+        footer a {
+            color: #aab7ff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>Video Intelligence Engine</h2>
+        <a href="https://github.com/Aditya-hk/Video_Intelligence_Engine">
+            GitHub ↗
+        </a>
+    </nav>
+
+    <header class="hero">
+        <div class="badge">AI • Machine Learning • RAG</div>
+
+        <h1>
+            Turn Videos Into <span>Knowledge</span>
+        </h1>
+
+        <p>
+            An AI-powered video intelligence system that transforms
+            spoken content into searchable knowledge and lets users
+            ask questions about video content using natural language.
+        </p>
+
+        <div class="buttons">
+            <a class="button primary"
+               href="https://videoengine.streamlit.app/">
+                Launch Application ↗
+            </a>
+
+            <a class="button secondary"
+               href="https://github.com/Aditya-hk/Video_Intelligence_Engine">
+                Explore Source Code
+            </a>
+        </div>
+    </header>
+
+    <section>
+        <h2 class="section-title">Core Features</h2>
+        <p class="section-description">
+            A complete pipeline for processing video content
+            and retrieving relevant information.
+        </p>
+
+        <div class="grid">
+            <div class="card">
+                <h3>🎬 Video Processing</h3>
+                <p>
+                    Accept video input and extract its audio
+                    for downstream speech processing.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🎙️ Speech Recognition</h3>
+                <p>
+                    Use Faster-Whisper to convert spoken
+                    audio into text transcripts.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🧠 Semantic Embeddings</h3>
+                <p>
+                    Use Sentence Transformers to represent
+                    transcript chunks as numerical vectors.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🔎 Semantic Search</h3>
+                <p>
+                    Store and retrieve relevant transcript
+                    segments through ChromaDB.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>💬 AI Question Answering</h3>
+                <p>
+                    Use retrieval-augmented generation to
+                    answer questions using retrieved context.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>⏱️ Contextual Information</h3>
+                <p>
+                    Use transcript timestamps where available
+                    to associate information with video segments.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-description">
+            From raw video to context-aware answers.
+        </p>
+
+        <ol class="workflow">
+            <li>Upload a video through the application.</li>
+            <li>Extract audio using FFmpeg.</li>
+            <li>Transcribe speech using Faster-Whisper.</li>
+            <li>Split the transcript into smaller chunks.</li>
+            <li>Generate embeddings using Sentence Transformers.</li>
+            <li>Store and retrieve vectors using ChromaDB.</li>
+            <li>Generate answers through the RAG pipeline.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2 class="section-title">Technology Stack</h2>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Python</h3>
+                <p>Core application and AI processing.</p>
+            </div>
+
+            <div class="card">
+                <h3>Streamlit</h3>
+                <p>Interactive application interface.</p>
+            </div>
+
+            <div class="card">
+                <h3>Faster-Whisper</h3>
+                <p>Speech-to-text transcription.</p>
+            </div>
+
+            <div class="card">
+                <h3>Sentence Transformers</h3>
+                <p>Text embedding generation.</p>
+            </div>
+
+            <div class="card">
+                <h3>ChromaDB</h3>
+                <p>Vector storage and retrieval.</p>
+            </div>
+
+            <div class="card">
+                <h3>LangChain</h3>
+                <p>RAG pipeline integration.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Explore the Project</h2>
+        <p class="section-description">
+            Try the deployed application or explore the source code
+            to understand the implementation.
+        </p>
+
+        <div class="buttons">
+            <a class="button primary"
+               href="https://videoengine.streamlit.app/">
+                Open Live Demo
+            </a>
+
+            <a class="button secondary"
+               href="https://github.com/Aditya-hk/Video_Intelligence_Engine">
+                View GitHub Repository
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Video Intelligence Engine | AI-Powered Video Understanding</p>
+        <p>
+            Built with Python, Streamlit, and Retrieval-Augmented Generation.
+        </p>
+    </footer>
+
+</body>
+</html>
